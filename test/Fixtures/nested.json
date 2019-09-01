@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/nested.json",
+
+  "definitions": {
+    "nested": {
+      "type": "object",
+      "properties": {
+        "prop3": { "type": "string" }
+      },
+      "required": ["prop3"],
+      "additionalProperties": false
+    }
+  },
+
+  "type": "object",
+  "properties": {
+    "prop1": { "type": "number" },
+    "prop2": { "$ref": "#/definitions/nested" }
+  },
+  "required": ["prop1", "prop2"],
+  "additionalProperties": false
+}
